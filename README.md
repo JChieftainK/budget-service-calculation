@@ -61,3 +61,14 @@
 ### Integration Testing
 
 # Frequently Asked Questions
+
+**Question:**
+What is this application for?  
+**Answer:**
+This is a basic web service for learning more about dotnet core 
+
+**Question:**
+What... is your favorite color?  
+**Answer:**
+Blue. No, yel-- auuuuuuuugh!  
+(Quote from Monty Python and the Holy Grail)
