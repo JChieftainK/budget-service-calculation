@@ -5,5 +5,8 @@
     <RootNamespace>budget_service_calculation</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+  </ItemGroup>
 
 </Project>
