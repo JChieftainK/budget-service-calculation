@@ -1,7 +1,17 @@
 namespace Calculations.Services 
 {
-  public class CalculationService
+  public interface ICalculationService
   {
-    public string something = "default";
+      public string returnValue();
+  }
+
+  public class CalculationService : ICalculationService
+  {
+    private string something = "it works";
+
+    public string returnValue()
+    {
+      return something;
+    }
   }
 }

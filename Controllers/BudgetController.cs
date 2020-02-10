@@ -3,6 +3,7 @@ using Calculations.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace Calculations.Controllers
 {
@@ -10,10 +11,12 @@ namespace Calculations.Controllers
   [Route("[controller]")]
   public class BudgetController : ControllerBase
   {
-    CalculationService service = new CalculationService();
-    public BudgetController()
+    private readonly ILogger<BudgetController> _logger;
+    private readonly ICalculationService _service;
+    public BudgetController(ILogger<BudgetController> logger, ICalculationService service)
     {
-
+      _logger = logger;
+      _service = service;
     }
 
     [HttpGet]
@@ -21,7 +24,7 @@ namespace Calculations.Controllers
     {
       System.Console.WriteLine("In Budget");
       System.Console.WriteLine(Environment.GetEnvironmentVariable("TEST"));
-      return Enumerable.Range(1, 1).Select(index => service.something).ToArray();
+      return Enumerable.Range(1, 1).Select(index => _service.returnValue()).ToArray();
     }
   }
 }
