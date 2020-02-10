@@ -19,11 +19,10 @@ namespace Calculations.Controllers
       _service = service;
     }
 
-    [HttpGet]
-    public IEnumerable<string> Get()
+    [HttpGet("{id}")]
+    public IEnumerable<string> Retrieve(string id)
     {
-      System.Console.WriteLine("In Budget");
-      System.Console.WriteLine(Environment.GetEnvironmentVariable("TEST"));
+      _logger.LogTrace($"Retrieving Budget for '{id}'");
       return Enumerable.Range(1, 1).Select(index => _service.returnValue()).ToArray();
     }
   }
